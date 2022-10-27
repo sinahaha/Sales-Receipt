@@ -9,7 +9,7 @@ public class importOutputTest {
 	@Test
 	public void testImported() {
 		String act = " imported ";
-		String exp = importOutput.TRUE.getValue();
+		String exp = ImportOutput.TRUE.getValue();
 
 		assertEquals(act, exp);
 	}
@@ -17,7 +17,7 @@ public class importOutputTest {
 	@Test
 	public void testNotImported() {
 		String act = " ";
-		String exp = importOutput.FALSE.getValue();
+		String exp = ImportOutput.FALSE.getValue();
 
 		assertEquals(act, exp);
 	}

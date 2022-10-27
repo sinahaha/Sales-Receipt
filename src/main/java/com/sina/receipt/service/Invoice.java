@@ -8,9 +8,9 @@ import com.sina.receipt.input.Input;
 import com.sina.receipt.validations.ValidateInputs;
 
 public class Invoice {
-	private ArrayList<SaleIetm> saleList = new ArrayList<SaleIetm>();
+	private ArrayList<SaleItem> saleList = new ArrayList<SaleItem>();
 
-	public ArrayList<SaleIetm> getSaleList() {
+	public ArrayList<SaleItem> getSaleList() {
 		return this.saleList;
 	}
 

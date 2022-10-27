@@ -2,15 +2,15 @@ package com.sina.receipt.input;
 
 import java.util.Scanner;
 
-import com.sina.receipt.service.SaleIetm;
+import com.sina.receipt.service.SaleItem;
 import com.sina.receipt.validations.ValidateInputs;
 
 public class Input {
 
 	ValidateInputs validation = new ValidateInputs();
 
-	public SaleIetm inputItem(Scanner scan) {
-		SaleIetm item = new SaleIetm();
+	public SaleItem inputItem(Scanner scan) {
+		SaleItem item = new SaleItem();
 
 		System.out.println("Please enter the name (and unit of the article with underscores e.g. 'CD' or 'bottle_of_wine':");
 		item.title = scan.next();

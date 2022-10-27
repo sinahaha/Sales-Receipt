@@ -5,69 +5,69 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.sina.receipt.service.SaleIetm;
+import com.sina.receipt.service.SaleItem;
 
 class SaleIetmTest {
 	
-	private SaleIetm saleIetm;
+	private SaleItem saleItem;
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		this.saleIetm = new SaleIetm();
+		this.saleItem = new SaleItem();
 	}
 
 	@Test
 	public void testGetItemTaxNormal() {
-		this.saleIetm.title = "CD";
-		this.saleIetm.quantitiy = 7;
-		this.saleIetm.unitPrice = 4.99;
-		this.saleIetm.taxExempt = false;
-		this.saleIetm.imported = false;
+		this.saleItem.title = "CD";
+		this.saleItem.quantitiy = 7;
+		this.saleItem.unitPrice = 4.99;
+		this.saleItem.taxExempt = false;
+		this.saleItem.imported = false;
 
 		double exp = 3.49;
-		double act = saleIetm.getItemTax();
+		double act = saleItem.getItemTax();
 
 		assertEquals(exp, act);
 	}
 
 	@Test
 	public void testGetItemTaxNormalImported() {
-		this.saleIetm.title = "Japanese Film CD";
-		this.saleIetm.quantitiy = 23;
-		this.saleIetm.unitPrice = 7.99;
-		this.saleIetm.taxExempt = false;
-		this.saleIetm.imported = true;
+		this.saleItem.title = "Japanese Film CD";
+		this.saleItem.quantitiy = 23;
+		this.saleItem.unitPrice = 7.99;
+		this.saleItem.taxExempt = false;
+		this.saleItem.imported = true;
 
 		double exp = 27.57;
-		double act = saleIetm.getItemTax();
+		double act = saleItem.getItemTax();
 
 		assertEquals(exp, act);
 	}
 	
 	@Test
 	public void testGetItemTaxExempt() {
-		this.saleIetm.title = "Aspirin";
-		this.saleIetm.quantitiy = 6;
-		this.saleIetm.unitPrice = 14.99;
-		this.saleIetm.taxExempt = true;
-		this.saleIetm.imported = false;
+		this.saleItem.title = "Aspirin";
+		this.saleItem.quantitiy = 6;
+		this.saleItem.unitPrice = 14.99;
+		this.saleItem.taxExempt = true;
+		this.saleItem.imported = false;
 		
 		double exp = 0;
-		double act = saleIetm.getItemTax();
+		double act = saleItem.getItemTax();
 		
 		assertEquals(exp, act);
 	}
 	
 	@Test
 	public void testGetItemTaxExemptImported() {
-		this.saleIetm.title = "American Dressing Sauce";
-		this.saleIetm.quantitiy = 5;
-		this.saleIetm.unitPrice = 13.99;
-		this.saleIetm.taxExempt = true;
-		this.saleIetm.imported = true;
+		this.saleItem.title = "American Dressing Sauce";
+		this.saleItem.quantitiy = 5;
+		this.saleItem.unitPrice = 13.99;
+		this.saleItem.taxExempt = true;
+		this.saleItem.imported = true;
 		
 		double exp = 3.50;
-		double act = saleIetm.getItemTax();
+		double act = saleItem.getItemTax();
 		
 		assertEquals(exp, act);
 	}

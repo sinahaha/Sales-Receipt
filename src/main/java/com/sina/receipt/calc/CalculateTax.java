@@ -1,17 +1,17 @@
 package com.sina.receipt.calc;
 
-import com.sina.receipt.service.SaleIetm;
-import com.sina.receipt.service.importOutput;
+import com.sina.receipt.service.SaleItem;
+import com.sina.receipt.service.ImportOutput;
 
-public class calculateTax {
+public class CalculateTax {
 
-	private SaleIetm item;
+	private SaleItem item;
 
-	public calculateTax(SaleIetm item) {
+	public CalculateTax(SaleItem item) {
 		this.item = item;
 	}
 
-	public SaleIetm getItem() {
+	public SaleItem getItem() {
 		return item;
 	}
 
@@ -32,6 +32,6 @@ public class calculateTax {
 	}
 
 	private String importedArticleOnInvoice(Boolean imported) {
-		return imported ? importOutput.TRUE.getValue() : importOutput.FALSE.getValue();
+		return imported ? ImportOutput.TRUE.getValue() : ImportOutput.FALSE.getValue();
 	}
 }

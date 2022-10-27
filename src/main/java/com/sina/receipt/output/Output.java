@@ -2,17 +2,17 @@ package com.sina.receipt.output;
 
 import java.util.ArrayList;
 
-import com.sina.receipt.calc.calculateTax;
-import com.sina.receipt.service.SaleIetm;
+import com.sina.receipt.calc.CalculateTax;
+import com.sina.receipt.service.SaleItem;
 
 public class Output {
 
 	private double finalPrice;
 	private double finalTax;
 
-	private ArrayList<SaleIetm> saleList = new ArrayList<SaleIetm>();
+	private ArrayList<SaleItem> saleList = new ArrayList<SaleItem>();
 
-	public void checkout(ArrayList<SaleIetm> saleList) {
+	public void checkout(ArrayList<SaleItem> saleList) {
 		this.saleList = saleList;
 
 		calculateRecepit();
@@ -20,7 +20,7 @@ public class Output {
 	}
 
 	private void calculateRecepit() {
-		for (SaleIetm item : this.saleList) {
+		for (SaleItem item : this.saleList) {
 			finalPrice += item.getPrice();
 			finalTax += item.getItemTax();
 		}
@@ -32,7 +32,7 @@ public class Output {
 
 		this.saleList.forEach((item) -> {
 
-			calculateTax details = new calculateTax(item);
+			CalculateTax details = new CalculateTax(item);
 
 			System.out.println(details.getQuantitiy() + details.getImportedArticleOnInvoice() + details.getTitle()
 					+ String.format("%.2f", details.getTaxedPrice()));

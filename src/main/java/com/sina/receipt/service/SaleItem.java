@@ -2,7 +2,7 @@ package com.sina.receipt.service;
 
 import com.sina.receipt.calc.TaxRate;
 
-public class SaleIetm {
+public class SaleItem {
 	private TaxRate rate;
 
 	public String title;
@@ -11,7 +11,7 @@ public class SaleIetm {
 	public Boolean taxExempt;
 	public Boolean imported;
 
-	public SaleIetm() {
+	public SaleItem() {
 		this.rate = new TaxRate();
 	}
 

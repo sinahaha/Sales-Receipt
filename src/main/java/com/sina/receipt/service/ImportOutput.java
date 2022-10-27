@@ -1,13 +1,13 @@
 package com.sina.receipt.service;
 
-public enum importOutput {
+public enum ImportOutput {
 
 	TRUE(" imported "),
     FALSE(" ");
 
     private final String value;
 
-    importOutput(String value) {
+    ImportOutput(String value) {
         this.value = value;
     }
 
