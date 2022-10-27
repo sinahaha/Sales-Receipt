@@ -27,7 +27,7 @@ public class SaleIetm {
 		return unitPrice;
 	}
 
-	public double getQuantity() {
+	public int getQuantity() {
 		return quantitiy;
 	}
 
