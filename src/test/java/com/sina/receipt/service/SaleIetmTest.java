@@ -1,14 +1,12 @@
 package com.sina.receipt.service;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.sina.receipt.service.SaleItem;
-
 class SaleIetmTest {
-	
+
 	private SaleItem saleItem;
 
 	@BeforeEach
@@ -43,7 +41,7 @@ class SaleIetmTest {
 
 		assertEquals(exp, act);
 	}
-	
+
 	@Test
 	public void testGetItemTaxExempt() {
 		this.saleItem.title = "Aspirin";
@@ -51,13 +49,13 @@ class SaleIetmTest {
 		this.saleItem.unitPrice = 14.99;
 		this.saleItem.taxExempt = true;
 		this.saleItem.imported = false;
-		
+
 		double exp = 0;
 		double act = saleItem.getItemTax();
-		
+
 		assertEquals(exp, act);
 	}
-	
+
 	@Test
 	public void testGetItemTaxExemptImported() {
 		this.saleItem.title = "American Dressing Sauce";
@@ -65,10 +63,10 @@ class SaleIetmTest {
 		this.saleItem.unitPrice = 13.99;
 		this.saleItem.taxExempt = true;
 		this.saleItem.imported = true;
-		
+
 		double exp = 3.50;
 		double act = saleItem.getItemTax();
-		
+
 		assertEquals(exp, act);
 	}
 }

@@ -5,7 +5,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.sina.receipt.input.Input;
-import com.sina.receipt.validations.ValidateInputs;
 
 public class Invoice {
 	private ArrayList<SaleItem> saleList = new ArrayList<SaleItem>();
@@ -15,7 +14,7 @@ public class Invoice {
 	}
 
 	public void saleItems() {
-		Input input= new Input();
+		Input input = new Input();
 		Boolean moreItems = true;
 
 		try (Scanner scan = new Scanner(System.in)) {
