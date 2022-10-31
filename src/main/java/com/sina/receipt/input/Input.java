@@ -36,10 +36,10 @@ public class Input {
 
 		do {
 			response = scan.next();
-			inputIsInvalid = this.validation.numericalInputIsInvalid(response);
+			inputIsInvalid = this.validation.intInputIsInvalid(response);
 
 			if (inputIsInvalid) {
-				System.out.println(String.format("%s is not a correct number; please enter a correct numbner.", response));
+				System.out.println(String.format("%s is not a correct quanitity; please enter a correct quantity.", response));
 			}
 
 		} while (inputIsInvalid);
@@ -53,10 +53,10 @@ public class Input {
 		
 		do {
 			response = scan.next();
-			inputIsInvalid = this.validation.numericalInputIsInvalid(response);
+			inputIsInvalid = this.validation.doubleInputIsInvalid(response);
 			
 			if (inputIsInvalid) {
-				System.out.println(String.format("%s is not a correct number; please enter a correct numbner.", response));
+				System.out.println(String.format("%s is not a correct number; please enter a correct number.", response));
 			}
 			
 		} while (inputIsInvalid);

@@ -36,32 +36,65 @@ public class ValidateInputsTest {
 	}
 
 	@Test
-	public void numericalInputIsInvalid() {
+	public void doubleInputIsInvalid() {
 		this.validate = new ValidateInputs();
 		Boolean exp;
 
-		exp = validate.numericalInputIsInvalid("");
+		exp = validate.doubleInputIsInvalid("");
 		assertTrue(exp);
 
-		exp = validate.numericalInputIsInvalid("N");
+		exp = validate.doubleInputIsInvalid("N");
 		assertTrue(exp);
 
-		exp = validate.numericalInputIsInvalid("Five");
+		exp = validate.doubleInputIsInvalid("Five");
 		assertTrue(exp);
 
-		exp = validate.numericalInputIsInvalid("1M");
+		exp = validate.doubleInputIsInvalid("1M");
 		assertTrue(exp);
 
-		exp = validate.numericalInputIsInvalid("1.");
+		exp = validate.doubleInputIsInvalid("1.");
 		assertFalse(exp);
 
-		exp = validate.numericalInputIsInvalid("15");
+		exp = validate.doubleInputIsInvalid("15");
 		assertFalse(exp);
 
-		exp = validate.numericalInputIsInvalid("1.54");
+		exp = validate.doubleInputIsInvalid("1.54");
 		assertFalse(exp);
 
-		exp = validate.numericalInputIsInvalid("0.00");
+		exp = validate.doubleInputIsInvalid("0.00");
+		assertFalse(exp);
+	}
+	
+	@Test
+	public void InputIsInvalid() {
+		this.validate = new ValidateInputs();
+		Boolean exp;
+		
+		exp = validate.intInputIsInvalid("");
+		assertTrue(exp);
+		
+		exp = validate.intInputIsInvalid("N");
+		assertTrue(exp);
+		
+		exp = validate.intInputIsInvalid("Five");
+		assertTrue(exp);
+		
+		exp = validate.intInputIsInvalid("1M");
+		assertTrue(exp);
+		
+		exp = validate.intInputIsInvalid("1.");
+		assertTrue(exp);
+		
+		exp = validate.intInputIsInvalid("1.54");
+		assertTrue(exp);
+		
+		exp = validate.intInputIsInvalid("0.00");
+		assertTrue(exp);
+		
+		exp = validate.intInputIsInvalid("15");
+		assertFalse(exp);
+		
+		exp = validate.intInputIsInvalid("00");
 		assertFalse(exp);
 	}
 
