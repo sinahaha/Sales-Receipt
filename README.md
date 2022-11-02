@@ -16,6 +16,8 @@ I solved the first challenge – “SALES TAXES”. For this, I followed the ste
       • CalculateTax.java: Calculates the taxed price and the output for the final invoice, used in "Output.java"
         • ImportOutput.java: An Enum class to prepare import related part on the invoice, used in "CalculateTax.java"
 
+  7-	Made some crucial comments in the "SaleItem.java" about data model (why my model doesn't contain and ID, where I am aware of the requirement).
+
 I tried to keep everything very simple and made a lot of assumptions:
   •	the user enters the articles name and unit using underscores instead of spaces
   •	quantity / amount is an integer (no 3.5 Kgr is accepted, but 3)
