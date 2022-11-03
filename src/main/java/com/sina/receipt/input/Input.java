@@ -18,7 +18,7 @@ public class Input {
 		System.out.println("Please enter the quantity of the article:");
 		item.quantitiy = readInt(scan);
 
-		System.out.println("Please price per unit:");
+		System.out.println("Please enter the price per unit:");
 		item.unitPrice = readDouble(scan);
 
 		System.out.println("Is the article imported?");
